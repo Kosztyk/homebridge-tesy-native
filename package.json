@@ -1,6 +1,6 @@
 {
   "name": "homebridge-tesy-native",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TESY MyTESY cloud convectors for Homebridge: thermostats, temperature control and presets.",
   "displayName": "TESY Native",
   "main": "index.js",
@@ -9,19 +9,53 @@
     "node": "^22.12.0 || ^24.0.0",
     "homebridge": "^1.8.0 || ^2.0.0"
   },
-  "keywords": ["homebridge-plugin", "supports-hap", "homebridge", "homekit", "tesy", "mytesy", "convector", "thermostat", "heater"],
-  "author": {"name": "Kosztyk", "url": "https://github.com/Kosztyk"},
+  "keywords": [
+    "homebridge-plugin",
+    "supports-hap",
+    "homebridge",
+    "homekit",
+    "tesy",
+    "mytesy",
+    "convector",
+    "thermostat",
+    "heater"
+  ],
+  "author": {
+    "name": "Kosztyk",
+    "url": "https://github.com/Kosztyk"
+  },
   "license": "MIT",
-  "repository": {"type": "git", "url": "git+https://github.com/Kosztyk/homebridge-tesy-native.git"},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kosztyk/homebridge-tesy-native.git"
+  },
   "homepage": "https://github.com/Kosztyk/homebridge-tesy-native#readme",
-  "bugs": {"url": "https://github.com/Kosztyk/homebridge-tesy-native/issues"},
-  "files": ["index.js", "lib/", "scripts/check.js", "config.schema.json", "config.example.json", "README.md", "CHANGELOG.md", "LICENSE", "NOTICE"],
+  "bugs": {
+    "url": "https://github.com/Kosztyk/homebridge-tesy-native/issues"
+  },
+  "files": [
+    "index.js",
+    "lib/",
+    "scripts/check.js",
+    "config.schema.json",
+    "config.example.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE"
+  ],
   "scripts": {
     "check": "node scripts/check.js",
     "test": "node --test test/*.test.js",
     "prepack": "npm run check"
   },
-  "dependencies": {"mqtt": "^5.16.1"},
-  "devDependencies": {"homebridge": "2.4.0"},
-  "publishConfig": {"access": "public"}
+  "dependencies": {
+    "mqtt": "^5.16.1"
+  },
+  "devDependencies": {
+    "homebridge": "2.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

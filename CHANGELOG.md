@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 — 2026-10-22
+
+- Use a standard required array for MyTESY username, password and user ID in the configuration schema.
+
 ## 1.0.0 — 2026-10-22
 
 - Initial MyTESY cloud convector support based on the supplied Home Assistant integration.
