@@ -1,0 +1,20 @@
+name: Test
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+        homebridge: [1.11.1, 2.4.0]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm install --no-save --package-lock=false homebridge@${{ matrix.homebridge }}
+      - run: npm run check
+      - run: npm test
+      - run: npm pack --dry-run

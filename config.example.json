@@ -1,0 +1,9 @@
+{
+  "name": "TESY Native",
+  "username": "your-email@example.com",
+  "password": "YOUR_MYTESY_PASSWORD",
+  "userId": "YOUR_MYTESY_USER_ID",
+  "exposePresets": true,
+  "pollInterval": 30,
+  "platform": "TesyNative"
+}

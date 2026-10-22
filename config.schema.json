@@ -1,0 +1,35 @@
+{
+  "pluginAlias": "TesyNative",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Connect MyTESY cloud convectors using the same account details as your Home Assistant TESY integration. Devices appear as thermostats with Heat/Off and a 10–30 °C setpoint.",
+  "schema": {
+    "type": "object",
+    "required": ["username", "password", "userId"],
+    "properties": {
+      "name": {"title": "Plugin name", "type": "string", "default": "TESY Native"},
+      "username": {"title": "MyTESY email", "type": "string", "format": "email", "required": true},
+      "password": {"title": "MyTESY password", "type": "string", "format": "password", "required": true},
+      "userId": {"title": "MyTESY user ID", "type": "string", "required": true, "description": "Use the user_id from your Home Assistant TESY integration. This is the MyTESY account ID, not the device MAC or your email."},
+      "exposePresets": {"title": "Show Comfort / Eco / Sleep switches", "type": "boolean", "default": true, "description": "Selecting a preset preserves the current heater power state. Turning the selected preset off returns to manual heating mode."},
+      "pollInterval": {"title": "Cloud refresh interval (seconds)", "type": "integer", "default": 30, "minimum": 15, "maximum": 3600},
+      "requestTimeout": {"title": "Request timeout (seconds)", "type": "integer", "default": 8, "minimum": 3, "maximum": 15},
+      "offlineAfter": {"title": "Cloud outage grace period (seconds)", "type": "integer", "default": 300, "minimum": 60, "maximum": 3600, "description": "Keep the last snapshot during a short cloud outage. Report No Response after this long without a successful snapshot containing the device."},
+      "staleHeatingAfter": {"title": "Stale active heating threshold (seconds)", "type": "integer", "default": 600, "minimum": 60, "maximum": 7200, "description": "Stop displaying active heating when its device timestamp is too old. Old idle/off timestamps alone do not mark a device offline."},
+      "debug": {"title": "Detailed device status logging", "type": "boolean", "default": false},
+      "devices": {
+        "title": "Optional device overrides", "type": "array",
+        "description": "Leave this empty to discover all compatible convectors. A blank override row is ignored.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "mac": {"title": "Device MAC address", "type": "string", "placeholder": "AA:BB:CC:DD:EE:FF", "description": "Copy the MAC from the Homebridge discovery log."},
+            "name": {"title": "Name override (optional)", "type": "string"},
+            "exclude": {"title": "Exclude this device", "type": "boolean", "default": false},
+            "exposePresets": {"title": "Show preset switches for this device", "type": "boolean", "description": "If omitted, use the plugin-wide setting."}
+          }
+        }
+      }
+    }
+  }
+}

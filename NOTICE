@@ -1,0 +1,6 @@
+This independently implemented Node.js plugin follows the MyTESY cloud
+protocol used in the user-supplied Home Assistant TESY integration (1.1.0).
+The supplied Python files and vendor JavaScript bundle are not distributed.
+
+TESY and MyTESY are trademarks of their respective owners. This is an
+unofficial community plugin, not a TESY product or endorsement.
