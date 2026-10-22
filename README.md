@@ -2,7 +2,6 @@
 
 MyTESY cloud convectors in Apple Home, implemented from the cloud protocol in the supplied Home Assistant TESY integration 1.1.0. Home Assistant does not need to be running: this plugin communicates with MyTESY directly.
 
-Package: `homebridge-tesy-native` · Platform: `TesyNative` · Author: **Kosztyk** · Version: **1.0.0**
 
 ## Features
 
